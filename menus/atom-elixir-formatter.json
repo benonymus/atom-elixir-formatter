@@ -8,7 +8,7 @@
           "submenu": [
             {
               "label": "Format",
-              "command": "atom-elixir-formatter:format"
+              "command": "atom-elixir-formatter-pulsar:format"
             }
           ]
         }

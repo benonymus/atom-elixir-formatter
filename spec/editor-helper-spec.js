@@ -13,7 +13,7 @@ describe("EditorHelper", () => {
       atom.packages
         .activatePackage("language-elixir")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter"))
+        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
     );
 
     runs(() => (editor = atom.workspace.getActiveTextEditor()));
@@ -28,12 +28,12 @@ describe("EditorHelper", () => {
     });
 
     it("returns false when formatOnSave is never", () => {
-      atom.config.set("atom-elixir-formatter.formatOnSave", "never");
+      atom.config.set("atom-elixir-formatter-pulsar.formatOnSave", "never");
       expect(editorHelper.shouldFormatTextEditor(editor)).toEqual(false);
     });
 
     it("returns false when package is disabled", () => {
-      atom.packages.disablePackage("atom-elixir-formatter");
+      atom.packages.disablePackage("atom-elixir-formatter-pulsar");
       expect(editorHelper.shouldFormatTextEditor(editor)).toEqual(false);
     });
   });

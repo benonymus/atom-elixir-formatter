@@ -11,7 +11,7 @@ describe("Settings", () => {
       atom.packages
         .activatePackage("language-elixir")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter"))
+        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
     );
 
     atom.packages.triggerDeferredActivationHooks();
@@ -19,19 +19,19 @@ describe("Settings", () => {
 
   describe("package settings", () => {
     it("should default formatOnSave to 'always'", () => {
-      expect(atom.config.get("atom-elixir-formatter.formatOnSave")).toBe(
+      expect(atom.config.get("atom-elixir-formatter-pulsar.formatOnSave")).toBe(
         "always"
       );
     });
 
     it("should default showErrorNotifications to true", () => {
       expect(
-        atom.config.get("atom-elixir-formatter.showErrorNotifications")
+        atom.config.get("atom-elixir-formatter-pulsar.showErrorNotifications")
       ).toBe(true);
     });
 
     it("should default elixirExecutable to 'elixir'", () => {
-      expect(atom.config.get("atom-elixir-formatter.elixirExecutable")).toEqual(
+      expect(atom.config.get("atom-elixir-formatter-pulsar.elixirExecutable")).toEqual(
         "elixir"
       );
     });
@@ -40,7 +40,7 @@ describe("Settings", () => {
   describe("getElixirPath", () => {
     it("returns elixirExecutable", () => {
       atom.config.set(
-        "atom-elixir-formatter.elixirExecutable",
+        "atom-elixir-formatter-pulsar.elixirExecutable",
         "/path/to/elixir"
       );
       expect(settings.getElixirPath()).toEqual("/path/to/elixir");
@@ -50,7 +50,7 @@ describe("Settings", () => {
   describe("getMixPath", () => {
     it("returns path based on elixirExecutable setting", () => {
       atom.config.set(
-        "atom-elixir-formatter.elixirExecutable",
+        "atom-elixir-formatter-pulsar.elixirExecutable",
         "/path/to/elixir"
       );
       expect(settings.getMixPath()).toEqual("/path/to/mix");
@@ -69,7 +69,7 @@ describe("Settings", () => {
 
   describe("shouldFormatOnSave", () => {
     it("returns true when formatOnSave is 'always'", () => {
-      atom.config.set("atom-elixir-formatter.formatOnSave", "always");
+      atom.config.set("atom-elixir-formatter-pulsar.formatOnSave", "always");
       expect(settings.shouldFormatOnSave()).toBe(true);
     });
 
@@ -77,7 +77,7 @@ describe("Settings", () => {
       spyOn(settings, "isFormatterFilePresent").andReturn(true);
 
       atom.config.set(
-        "atom-elixir-formatter.formatOnSave",
+        "atom-elixir-formatter-pulsar.formatOnSave",
         "whenFormatterFilePresent"
       );
       expect(settings.shouldFormatOnSave()).toBe(true);
@@ -87,14 +87,14 @@ describe("Settings", () => {
       spyOn(settings, "isFormatterFilePresent").andReturn(false);
 
       atom.config.set(
-        "atom-elixir-formatter.formatOnSave",
+        "atom-elixir-formatter-pulsar.formatOnSave",
         "whenFormatterFilePresent"
       );
       expect(settings.shouldFormatOnSave()).toBe(false);
     });
 
     it("returns false when formatOnSave is 'never'", () => {
-      atom.config.set("atom-elixir-formatter.formatOnSave", "never");
+      atom.config.set("atom-elixir-formatter-pulsar.formatOnSave", "never");
       expect(settings.shouldFormatOnSave()).toBe(false);
     });
   });

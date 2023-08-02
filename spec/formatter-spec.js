@@ -17,7 +17,7 @@ describe("Formatter", () => {
       atom.packages
         .activatePackage("language-elixir")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter"))
+        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
     );
 
     runs(() => (editor = atom.workspace.getActiveTextEditor()));
@@ -99,7 +99,7 @@ describe("Formatter", () => {
 
     it("uses elixirExecutable setting when defined", () => {
       atom.config.set(
-        "atom-elixir-formatter.elixirExecutable",
+        "atom-elixir-formatter-pulsar.elixirExecutable",
         "/path/to/elixir"
       );
       formatter.runFormat(editor);

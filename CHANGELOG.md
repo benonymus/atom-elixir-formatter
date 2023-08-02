@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## 2.3.0 - 2022-07-18
+## 2.5.0 - 2023-08-02
+
+- Total renaming
+
+## 2.3.0 - 2023-08-02
 
 - Put back support for .heex files and resolve issue for Pulsar
 

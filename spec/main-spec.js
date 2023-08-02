@@ -16,17 +16,17 @@ describe("Main", () => {
       atom.packages
         .activatePackage("language-elixir")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter"))
+        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
     );
 
     atom.packages.triggerDeferredActivationHooks();
   });
 
   it("should be in packages list", () => {
-    expect(atom.packages.isPackageLoaded("atom-elixir-formatter")).toBe(true);
+    expect(atom.packages.isPackageLoaded("atom-elixir-formatter-pulsar")).toBe(true);
   });
 
   it("should be an active package", () => {
-    expect(atom.packages.isPackageActive("atom-elixir-formatter")).toBe(true);
+    expect(atom.packages.isPackageActive("atom-elixir-formatter-pulsar")).toBe(true);
   });
 });
