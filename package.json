@@ -1,8 +1,8 @@
 {
-  "name": "atom-elixir-formatter",
+  "name": "atom-elixir-formatter-pulsar",
   "main": "./lib/main",
   "version": "2.2.0",
-  "description": "Elixir source code formatter for the Atom editor.",
+  "description": "Elixir source code formatter for the Pulsar editor.",
   "keywords": [
     "elixir",
     "formatter"
@@ -13,7 +13,7 @@
   "activationHooks": [
     "language-elixir:grammar-used"
   ],
-  "repository": "https://github.com/rgreenjr/atom-elixir-formatter",
+  "repository": "https://github.com/benonymus/atom-elixir-formatter",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
