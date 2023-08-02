@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 2.3.0 - 2022-07-18
+
+- Put back support for .heex files and resolve issue for Pulsar
+
+## 2.2.0 - 2022-07-18
+
+- Revert support for .heex files until synyax issue is resolved
+
+## 2.1.0 - 2022-07-07
+
+- Add support for .heex files (@benonymus)
+
 ## 2.0.1 - 2021-12-11
 
 - Remove use of deprecated --check-equivalent
