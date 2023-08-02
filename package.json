@@ -8,7 +8,7 @@
     "formatter"
   ],
   "activationCommands": {
-    "atom-workspace": "atom-elixir-formatter:format"
+    "atom-workspace": "atom-elixir-formatter-pulsar:format"
   },
   "activationHooks": [
     "language-elixir:grammar-used"
