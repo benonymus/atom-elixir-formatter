@@ -13,7 +13,7 @@
   "activationHooks": [
     "language-elixir:grammar-used"
   ],
-  "repository": "https://github.com/benonymus/atom-elixir-formatter",
+  "repository": "https://github.com/benonymus/atom-elixir-formatter-pulsar",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
