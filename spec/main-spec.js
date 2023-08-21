@@ -14,19 +14,25 @@ describe("Main", () => {
   beforeEach(() => {
     waitsForPromise(() =>
       atom.packages
-        .activatePackage("language-elixir")
+        .activatePackage("language-elixir-pulsar")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
+        .then(() =>
+          atom.packages.activatePackage("atom-elixir-formatter-pulsar")
+        )
     );
 
     atom.packages.triggerDeferredActivationHooks();
   });
 
   it("should be in packages list", () => {
-    expect(atom.packages.isPackageLoaded("atom-elixir-formatter-pulsar")).toBe(true);
+    expect(atom.packages.isPackageLoaded("atom-elixir-formatter-pulsar")).toBe(
+      true
+    );
   });
 
   it("should be an active package", () => {
-    expect(atom.packages.isPackageActive("atom-elixir-formatter-pulsar")).toBe(true);
+    expect(atom.packages.isPackageActive("atom-elixir-formatter-pulsar")).toBe(
+      true
+    );
   });
 });

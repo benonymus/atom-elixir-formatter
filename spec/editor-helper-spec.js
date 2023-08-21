@@ -11,9 +11,11 @@ describe("EditorHelper", () => {
   beforeEach(() => {
     waitsForPromise(() =>
       atom.packages
-        .activatePackage("language-elixir")
+        .activatePackage("language-elixir-pulsar")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
+        .then(() =>
+          atom.packages.activatePackage("atom-elixir-formatter-pulsar")
+        )
     );
 
     runs(() => (editor = atom.workspace.getActiveTextEditor()));

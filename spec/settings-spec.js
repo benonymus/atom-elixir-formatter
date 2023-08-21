@@ -9,9 +9,11 @@ describe("Settings", () => {
   beforeEach(() => {
     waitsForPromise(() =>
       atom.packages
-        .activatePackage("language-elixir")
+        .activatePackage("language-elixir-pulsar")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
+        .then(() =>
+          atom.packages.activatePackage("atom-elixir-formatter-pulsar")
+        )
     );
 
     atom.packages.triggerDeferredActivationHooks();
@@ -31,9 +33,9 @@ describe("Settings", () => {
     });
 
     it("should default elixirExecutable to 'elixir'", () => {
-      expect(atom.config.get("atom-elixir-formatter-pulsar.elixirExecutable")).toEqual(
-        "elixir"
-      );
+      expect(
+        atom.config.get("atom-elixir-formatter-pulsar.elixirExecutable")
+      ).toEqual("elixir");
     });
   });
 

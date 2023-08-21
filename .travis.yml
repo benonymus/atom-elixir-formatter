@@ -1,7 +1,7 @@
 language: node_js
 env:
   global:
-    - APM_TEST_PACKAGES="language-elixir"
+    - APM_TEST_PACKAGES="language-elixir-pulsar"
     - ATOM_LINT_WITH_BUNDLED_NODE="true"
   matrix:
     - ATOM_CHANNEL=stable
@@ -26,7 +26,7 @@ dist: trusty
 addons:
   apt:
     packages:
-    - build-essential
-    - fakeroot
-    - git
-    - libsecret-1-dev
+      - build-essential
+      - fakeroot
+      - git
+      - libsecret-1-dev

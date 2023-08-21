@@ -15,9 +15,11 @@ describe("Formatter", () => {
   beforeEach(() => {
     waitsForPromise(() =>
       atom.packages
-        .activatePackage("language-elixir")
+        .activatePackage("language-elixir-pulsar")
         .then(() => atom.workspace.open(validFile))
-        .then(() => atom.packages.activatePackage("atom-elixir-formatter-pulsar"))
+        .then(() =>
+          atom.packages.activatePackage("atom-elixir-formatter-pulsar")
+        )
     );
 
     runs(() => (editor = atom.workspace.getActiveTextEditor()));
@@ -37,13 +39,13 @@ describe("Formatter", () => {
     it("displays error notification when status is non-zero", () => {
       spyOn(formatter, "runFormat").andReturn({
         status: 1,
-        stderr: "stderr msg"
+        stderr: "stderr msg",
       });
 
       formatter.formatTextEditor(editor);
       specHelper.verifyNotification("Elixir Formatter Error", {
         type: "error",
-        detail: "stderr msg"
+        detail: "stderr msg",
       });
     });
 
@@ -52,7 +54,7 @@ describe("Formatter", () => {
       formatter.formatTextEditor(editor);
       specHelper.verifyNotification("Elixir Formatter Exception", {
         type: "error",
-        detail: "exception msg"
+        detail: "exception msg",
       });
     });
 
@@ -71,7 +73,7 @@ describe("Formatter", () => {
       waitsForPromise(() =>
         atom.workspace
           .open(filePath)
-          .then(editor => formatter.formatActiveTextEditor())
+          .then((editor) => formatter.formatActiveTextEditor())
           .then(() =>
             specHelper.verifyNotification(
               "Elixir Formatter only formats Elixir source code",
@@ -83,7 +85,7 @@ describe("Formatter", () => {
   });
 
   describe("runFormat", () => {
-    beforeEach(function() {
+    beforeEach(function () {
       spyOn(process, "spawnSync").andReturn({});
       spyOn(main, "isWindowsPlatform").andReturn(false);
     });
@@ -131,7 +133,7 @@ describe("Formatter", () => {
         ["format", editor.getPath()],
         {
           cwd: path.dirname(validFile),
-          shell: true
+          shell: true,
         }
       );
     });

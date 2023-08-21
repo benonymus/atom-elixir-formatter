@@ -7,8 +7,11 @@
     "elixir",
     "formatter"
   ],
+  "activationCommands": {
+    "atom-workspace": "atom-elixir-formatter-pulsar:format"
+  },
   "activationHooks": [
-    "language-elixir:grammar-used"
+    "language-elixir-pulsar:grammar-used"
   ],
   "repository": "https://github.com/benonymus/atom-elixir-formatter-pulsar",
   "license": "MIT",
